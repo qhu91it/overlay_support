@@ -8,21 +8,26 @@ class ToastThemeData {
 
   final Alignment alignment;
 
+  final String fontFamily;
+
   const ToastThemeData.raw({
     @required this.textColor,
     @required this.background,
     @required this.alignment,
+    this.fontFamily,
   });
 
   factory ToastThemeData({
     Color textColor,
     Color background,
     Alignment alignment,
+    String fontFamily,
   }) {
     return ToastThemeData.raw(
         textColor: textColor ?? Colors.black87,
         background: background ?? const Color(0xfceeeeee),
-        alignment: alignment ?? Alignment(0, 0.618));
+        alignment: alignment ?? Alignment(0, 0.618),
+        fontFamily: fontFamily ?? '');
   }
 
   @override
@@ -32,7 +37,8 @@ class ToastThemeData {
           runtimeType == other.runtimeType &&
           textColor == other.textColor &&
           background == other.background &&
-          alignment == other.alignment;
+          alignment == other.alignment &&
+          fontFamily == other.fontFamily;
 
   @override
   int get hashCode => textColor.hashCode ^ background.hashCode ^ alignment.hashCode;

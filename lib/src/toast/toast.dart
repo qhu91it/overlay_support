@@ -43,7 +43,10 @@ class _Toast extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: DefaultTextStyle(
-          style: TextStyle(color: toastTheme.textColor),
+          style: TextStyle(
+            color: toastTheme.textColor,
+            fontFamily: toastTheme.fontFamily,
+          ),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Align(
